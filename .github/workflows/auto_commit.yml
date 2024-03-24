@@ -22,3 +22,5 @@ jobs:
         echo "$(03/24/2024 12:56:44127)" >> timeline.txt
         git commit -am "Auto commit: $(03/24/2024 12:56:44127)"
         git push
+ env:
+          HB_TOKEN: ${{ secrets.GH_TOKEN }}
