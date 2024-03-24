@@ -21,4 +21,4 @@ jobs:
         git add timeline.txt
         git diff --staged --quiet || (git commit -m "Update timeline.txt" && git push)
         env:
-          HB_TOKEN: ${{ secrets.HB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
