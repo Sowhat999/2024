@@ -1,26 +1,24 @@
-name: Auto Commit
+name: Auto Commit Specific File Every Minute
 
 on:
   schedule:
-    - cron: '*/1 * * * *' # Run every minute
+    - cron:  '*/1 * * * *' # Runs at every minute
 
 jobs:
-  commit:
+  auto-commit:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Set up Git
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetches all history for all tags and branches
+
+      - name: Commit and Push if timeline.txt changed
       run: |
         git config --global user.email "thehiddenwiki2024@proton.me"
         git config --global user.name "The-Hidden-Wiki-URLs"
-      
-    - name: Commit changes
-      run: |
-        echo "$(03/24/2024 12:56:44127)" >> timeline.txt
-        git commit -am "Auto commit: $(03/24/2024 12:56:44127)"
-        git push
- env:
-          HB_TOKEN: ${{ secrets.GH_TOKEN }}
+        git pull
+        git add timeline.txt
+        git diff --staged --quiet || (git commit -m "Update timeline.txt" && git push)
+        env:
+          HB_TOKEN: ${{ secrets.HB_TOKEN }}
