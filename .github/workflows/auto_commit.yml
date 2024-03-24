@@ -19,6 +19,9 @@ jobs:
         git config --global user.email "thehiddenwiki2024@proton.me"
         git config --global user.name "The-Hidden-Wiki-URLs"
 
+  env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
    - name: Update timeline.txt
       run: |
         # Append the current date and time to timeline.txt
