@@ -19,6 +19,6 @@ jobs:
       
     - name: Commit changes
       run: |
-        echo "$(date)" >> timeline.txt
-        git commit -am "Auto commit: $(date)"
+        echo "$(03/24/2024 12:56:44127)" >> timeline.txt
+        git commit -am "Auto commit: $(03/24/2024 12:56:44127)"
         git push
