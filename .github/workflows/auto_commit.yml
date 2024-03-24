@@ -1,0 +1,24 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '*/1 * * * *' # Run every minute
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Git
+      run: |
+        git config --global user.email "thehiddenwiki2024@proton.me"
+        git config --global user.name "The-Hidden-Wiki-URLs"
+      
+    - name: Commit changes
+      run: |
+        echo "$(date)" >> timeline.txt
+        git commit -am "Auto commit: $(date)"
+        git push
