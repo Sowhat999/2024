@@ -1,4 +1,4 @@
-name: Script Timeline
+name: Update Timeline
 
 on:
   schedule:
@@ -9,12 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Use Node.js 20
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      
       - name: Checkout repository
         uses: actions/checkout@v3
       
       - name: Update timeline.txt
         run: |
-          echo "$(03/25/2024 10:50:50528") - Update" >> timeline.txt
+          echo "$(date +'%Y-%m-%d %H:%M:%S') - Update" >> timeline.txt
           
       - name: Commit changes
         run: |
