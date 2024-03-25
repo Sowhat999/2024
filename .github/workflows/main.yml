@@ -1,4 +1,4 @@
-name: Update Timeline
+name: Script Timeline
 
 on:
   schedule:
