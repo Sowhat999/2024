@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# Configure Git
-git config --global user.email "thehiddenwiki2024@proton.me"
-git config --global user.name "The-Hidden-Wiki-URLs"
+# Path to your GitHub repository
+REPO_PATH="/path/to/The-Hidden-Wiki-URLs/2024"
+# GitHub username
+USERNAME="The-Hidden-Wiki-URLs"
+# GitHub repository name
+REPO_NAME="2024"
+
+cd $REPO_PATH
 
 # Generate a timestamp for the commit message
 TIMESTAMP=$(date +"%Y-%m-%d %T")
