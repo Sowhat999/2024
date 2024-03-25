@@ -10,11 +10,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: Update timeline.txt
         run: |
-          echo "$(date +"%Y-%m-%d %H:%M:%S") - Update" >> timeline.txt
+          echo "$(03/25/2024 10:28:19199") - Update" >> timeline.txt
           
       - name: Commit changes
         run: |
