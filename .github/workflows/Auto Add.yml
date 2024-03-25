@@ -2,7 +2,7 @@ name: Auto Add Timeline
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Runs 5 every minutes
+    - cron: '*/1 * * * *'  # Runs every minute
 
 jobs:
   update_timeline:
