@@ -14,7 +14,7 @@ jobs:
       
       - name: Update timeline.txt
         run: |
-          echo "$(03/25/2024 11:15:00223') - Update" >> timeline.txt
+              echo "$(date +'%m/%d/%Y %H:%M:%S') - Update" >> timeline.txt
           
       - name: Commit changes
         run: |
