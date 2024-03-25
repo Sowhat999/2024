@@ -15,10 +15,12 @@ jobs:
       - name: Delete timeline.txt
         run: |
           rm -f timeline.txt
+          ls -l  # For debugging purposes, list files in the directory to check if timeline.txt is deleted
           
       - name: Commit and push changes
         run: |
           git config --global user.email "thehiddenwiki2024@proton.me"
           git config --global user.name "The-Hidden-Wiki-URLs"
-          git commit -am "Auto delete timeline.txt" || echo "No changes to commit"
+          git add -A  # Add all changes, including the deletion of timeline.txt
+          git commit -m "Auto delete timeline.txt" || echo "No changes to commit"
           git push
