@@ -2,7 +2,7 @@ name: Auto Delete Timeline File
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Runs every minute
+    - cron: '*/3 * * * *'  # Runs every 3 minutes
 
 jobs:
   delete_timeline:
