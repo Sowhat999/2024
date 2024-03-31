@@ -5,21 +5,21 @@ on:
     - cron: '*/1 * * * *'  # Runs every minute
 
 jobs:
-  TheHiddenWikiURLs2024:
+  Hidden Wiki:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
       
-      - name: Update The Hidden Wiki URLs 2024.txt
+      - name: Update Hidden Wiki.txt
         run: |
-              echo "$(date -u +'%Y-%m-%d %H:%M:%S') UTC - Update" >> The Hidden Wiki URLs 2024.txt
+              echo "$(date -u +'%Y-%m-%d %H:%M:%S') UTC - Update" >> Hidden Wiki.txt
           
       - name: Commit changes
         run: |
           git config --global user.email "thehiddenwiki2024@proton.me"
           git config --global user.name "The-Hidden-Wiki-URLs"
-          git add The Hidden Wiki URLs 2024.txt
-          git commit -m "The Hidden Wiki URLs 2024.txt" || echo "No changes to commit"
+          git add Hidden Wiki.txt
+          git commit -m "Hidden Wiki.txt" || echo "No changes to commit"
           git push
