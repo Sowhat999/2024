@@ -5,7 +5,7 @@ on:
     - cron: '*/1 * * * *'  # Runs every minute
 
 jobs:
-  The Hidden Wiki URLs:
+  TheHiddenWikiURLs2024:
     runs-on: ubuntu-latest
 
     steps:
