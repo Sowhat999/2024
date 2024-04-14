@@ -2,7 +2,7 @@ name: The Hidden Wiki URLs 2024
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Runs every minute
+    - cron: '*/3 * * * *'  # Runs every minutes
 
 jobs:
   Hidden-Wiki:
